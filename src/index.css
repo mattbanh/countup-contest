@@ -8,7 +8,7 @@
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -30,15 +30,16 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex; */
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 1.25rem;
   line-height: 1.1;
+  font-weight: bold;
 }
 
 button {
