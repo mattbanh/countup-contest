@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const URL = import.meta.env.VITE_API_BACKEND_URL;
 const PORT = import.meta.env.VITE_API_PORT;
@@ -33,7 +33,7 @@ export function CountupForm({ setNewEntry }) {
   };
 
   return (
-    <section className="md:m-4">
+    <section className="md:mx-4 mb-10">
       <h2 className="font-bold mb-4">Add Entries</h2>
       <form onSubmit={handleSubmit}>
         <div className="flex gap-2 mb-4">
