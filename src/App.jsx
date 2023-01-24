@@ -1,21 +1,19 @@
-import { useState } from "react";
-
-import vcdLogo from "./assets/vcd-logo.png";
-import { CountupEntries } from "./components/CountupEntries/CountupEntries";
-import { CountupForm } from "./components/CountupForm/CountupForm";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AdminPage } from "./pages/AdminPage";
+import { VisualPage } from "./pages/VisualPage";
 
 function App() {
-  const [newEntry, setNewEntry] = useState([]);
-
+  // console.log(unavailable);
   return (
-    <section className="m-4">
-      <div className="mb-10">
-        <img className="w-48 mx-auto" src={vcdLogo}></img>
-      </div>
-
-      <CountupEntries newEntry={newEntry} />
-      <CountupForm setNewEntry={setNewEntry} />
-    </section>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<VisualPage />} />
+          <Route path="/admina2vcd" element={<AdminPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
