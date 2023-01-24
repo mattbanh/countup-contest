@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<VisualPage />} />
-          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admina2vcd" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

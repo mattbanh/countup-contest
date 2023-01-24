@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const URL = import.meta.env.VITE_API_BACKEND_URL;
-const PORT = import.meta.env.VITE_API_PORT;
 
 export function CountupEntries({ newEntry, setUnavailable }) {
   const [entries, setEntries] = useState([]);
@@ -19,7 +18,7 @@ export function CountupEntries({ newEntry, setUnavailable }) {
 
   useEffect(() => {
     axios
-      .get(`${URL}${PORT}/entries`)
+      .get(`${URL}/entries`)
       .then((response) => {
         setEntries(response.data);
         let unArr = createUnavailable(response.data);
@@ -30,7 +29,7 @@ export function CountupEntries({ newEntry, setUnavailable }) {
 
   const deleteEntry = (event) => {
     axios
-      .delete(`${URL}${PORT}/entries/${event.target.id}`)
+      .delete(`${URL}/entries/${event.target.id}`)
       .then((response) => setDel(response.data))
       .catch((error) => console.log(error));
   };
@@ -46,7 +45,7 @@ export function CountupEntries({ newEntry, setUnavailable }) {
             </span>
             <button
               id={entry._id}
-              className="text-xs px-1 bg-slate-700 rounded-md border-none"
+              className="text-xs px-1 bg-slate-800 rounded-md border-none"
               onClick={deleteEntry}
             >
               ⨉
